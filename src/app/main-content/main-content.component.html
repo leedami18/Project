@@ -3,27 +3,57 @@
         r2c1
     </div>
     <div class="container-padding">
-        <button (click)="addStudent()" class="add-button">Add Student</button>
-        <table class='table-one'>
-            <thead>
+        <!-- <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button> -->
+        <!-- <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-dark">Dark</button> -->
+
+        <table class="table">
+            <thead class="thead-dark">
                 <tr>
-                    <td>ID:</td>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Courses</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let student of students">
-                    <td>{{student.id}}</td>
-                    <td>{{student.firstName}}</td>
-                    <td>{{student.lastName}}</td>
-                    <td>{{student.course}}</td>
-                </tr>
-            </tbody>
-        </table>
+                    <th scope="col">ID</th>
+                    <th scope="col">First NAme</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Courses</th>
+                    <th>
+                        <div class="btn-group pull-right">
+                    <td><button type="button" class="btn btn-success" (click)="saveStudent()">Save</button></td>
+                    <td><button type="button" class="btn btn-info" [disabled]="disableAddButton"
+                            (click)="addStudent()">Add</button></td>
+
     </div>
-    <div class="container-padding">
-        r2c3
-    </div>
+    </th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentArray; let i = index">
+            <th *ngIf="!student.editMode" scope="row">{{ student.id }}</th>
+            <td *ngIf="!student.editMode">{{ student.firstName }}</td>
+            <td *ngIf="!student.editMode">{{ student.lastName }}</td>
+            <td *ngIf="!student.editMode">{{ student.course }}</td>
+
+            <th *ngIf="student.editMode" scope="row">
+                <input [(ngModel)]="student.id" type="text" class="form-control" placeholder="ID">
+            </th>
+            <td *ngIf="student.editMode">
+                <input [(ngModel)]="student.firstName" type="text" class="form-control" placeholder="First Name">
+            </td>
+            <td *ngIf="student.editMode">
+                <input [(ngModel)]="student.lastName" type="text" class="form-control" placeholder="Last Name">
+            </td>
+            <td *ngIf="student.editMode">
+                <input [(ngModel)]="student.course" type="text" class="form-control" placeholder="Course">
+            </td>
+
+            <td><button type="button" class="btn btn-danger pull-right" (click)="removeStudent (i)">X</button></td>
+        </tr>
+
+    </tbody>
+    </table>
+</div>
+<div class="container-padding">
+    r2c3
 </div>
