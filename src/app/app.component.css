@@ -5,6 +5,9 @@
     grid-template-rows: 1fr 12fr 1fr;
 }
 
+.main-outlet {
+    display: none;
+}
 /* .row-one,
 .row-two,
 .row-three {
