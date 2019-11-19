@@ -1,4 +1,98 @@
-<table class="table">
+<main id="tournament">
+
+    <ul class="round round-1">
+      <tr *ngFor="let list of teamArray" >
+        <li class="spacer">&nbsp;</li>
+  
+  
+  
+        <li class="game game-top winner"></li>
+        <p id="welcome"></p>
+        <input type="text" [(ngModel)]="list.Team1">
+        <button (click)="navigateTo('courses')" class="nav-button" type="button" mat-raised-button color='warn'>
+          Submit
+      </button>
+        <li class="game game-spacer">&nbsp;</li>
+        <li class="game game-bottom" ></li>  
+        <li class="spacer">&nbsp;</li>
+  
+  
+        <li class="spacer">&nbsp;</li>
+      </tr>
+      <button (click)="addTeam()">add</button>
+      <button (click)="removeTeam()">remove</button>
+  
+    </ul>
+    <ul class="round round-2">
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+  
+      <input>
+      <li class="game game-top winner"></li>
+  
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-spacer">&nbsp;</li>
+  
+      <input>
+      <li class="game game-bottom "></li>
+  
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+  
+      <input>
+      <li class="game game-bottom "></li>
+  
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-spacer">&nbsp;</li>
+  
+      <input>
+      <li class="game game-bottom "></li>
+  
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-3">
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+      <input>
+      <li class="game game-bottom "></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-spacer">&nbsp;</li>
+      <input>
+      <li class="game game-bottom "></li>
+  
+      <li class="spacer">&nbsp;</li>
+  
+  
+      <li class="spacer">&nbsp;</li>
+    </ul>
+    <ul class="round round-4">
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+      <input>
+      <li class="game game-bottom "></li>
+      <li class="spacer">&nbsp;</li>
+      <li class="spacer">&nbsp;</li>
+  
+  
+  
+      <li class="spacer">&nbsp;</li>
+  
+  
+  
+    </ul>
+  
+  
+  </main>
+
+
+
+<!-- <table class="table">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">ID</th>
@@ -41,4 +135,4 @@
     </tr>
 
 </tbody>
-</table>
+</table> -->
