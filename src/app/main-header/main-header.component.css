@@ -1,6 +1,6 @@
 .row-one {
     display: grid;
-    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-columns: 1fr 5fr 1fr;
     height: 100%;
     width: 100%;
 }

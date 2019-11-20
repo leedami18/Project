@@ -13,7 +13,7 @@ body {
 
 .container-padding {
     margin: 12px;
-    border: 1px dashed #d2d440;
+    /* border: 1px dashed #d2d440; */
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

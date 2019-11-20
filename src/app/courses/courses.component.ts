@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeComponent } from '../home/home.component';
 
-interface IStudent {
-  id: number;
-  firstName: string;
-  lastName: string;
-  course: string;
+interface ITournment {
+  team: string;
   editMode: boolean;
 }
 
@@ -15,61 +13,45 @@ interface IStudent {
 })
 export class CoursesComponent implements OnInit {
 
-  studentArray: Array<IStudent> = [];
+  teamArray: Array<any> = [];
   disableAddButton = false;
   constructor() { }
 
   ngOnInit() {
-    this.studentArray = [
+    this.teamArray = [
       {
-        id: 1,
-        firstName: 'Damian',
-        lastName: 'Lee',
-        course: 'Programming',
-        editMode: false
+        // Team1: 'qwe',
+        // editMode: false
       },
       {
-        id: 2,
-        firstName: 'Mike',
-        lastName: 'Tyson',
-        course: 'Boxing',
-        editMode: false
-      },
-      {
-        id: 3,
-        firstName: 'Muhammad',
-        lastName: 'Ali',
-        course: 'Super Boxing',
-        editMode: false
-      },
+        // team2: 'qwe',
+        // editMode: false
+      }
     ];
   }
 
-  addStudent() {
-    this.studentArray.unshift({
-      id: null,
-      firstName: null,
-      lastName: null,
-      course: null,
-      editMode: true
+  addTeam() {
+    this.teamArray.unshift({
+      team: 'qwe',
+        editMode: false
     });
     this.disableAddButton = true;
   }
 
-  removeStudent(index: number) {
-    this.studentArray.splice(index, 1);
+  removeTeam(index: number) {
+    this.teamArray.splice(index, 1);
   }
   saveStudent() {
-    this.studentArray[0].editMode = false;
+    this.teamArray[0].editMode = false;
     this.disableAddButton = false;
 
-    this.sort('asc');
+    // this.sort('asc');
   }
 
-  sort(direction: string) {
-    this.studentArray.sort((a: IStudent, b: IStudent) => {
-      return a.id < b.id ? -1 : 1;
-    });
-  }
+  // sort(direction: string) {
+  //   this.tournamentArray.sort((a: ITournment, b: ITournment) => {
+  //     return a.id < b.id ? -1 : 1;
+  //   });
+  // }
 
 }
