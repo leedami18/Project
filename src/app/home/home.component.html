@@ -30,7 +30,7 @@
 
 <h1>
   <br>
-  <!-- call name entered thru previous page -->
+  <!-- if making 2nd page, call title entered through previous page -->
   {{tourneyTitle}}
 
 </h1>
@@ -52,6 +52,7 @@
         <div class="btn-group-sm">
           <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
         </div>
+        <!-- disable advance button after winner moves on or until CLEAR -->
       </span></li>
 
     <li class="spacer">&nbsp;</li>
@@ -126,15 +127,31 @@
     <!-- loop for winning teams-->
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM1 <span>82</span></li>
+    <li class="game game-top winner">TEAM1 <span>
+        <div class="btn-group-sm">
+          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+        </div>
+      </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">TEAM3 <span>56</span></li>
+    <li class="game game-bottom ">TEAM3 <span>
+        <div class="btn-group-sm">
+          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+        </div>
+      </span></li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM6 <span>74</span></li>
+    <li class="game game-top winner">TEAM6 <span>
+        <div class="btn-group-sm">
+          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+        </div>
+      </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">TEAM7 <span>57</span></li>
+    <li class="game game-bottom ">TEAM7 <span>
+        <div class="btn-group-sm">
+          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+        </div>
+      </span></li>
 
     <li class="spacer">&nbsp;</li>
 
@@ -154,9 +171,17 @@
     <!-- loop calling winning teams-->
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM1 <span>77</span></li>
+    <li class="game game-top winner">TEAM1 <span>
+        <div class="btn-group-sm">
+          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+        </div>
+      </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">TEAM6 <span>69</span></li>
+    <li class="game game-bottom ">TEAM6 <span>
+        <div class="btn-group-sm">
+          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+        </div>
+      </span></li>
 
     <li class="spacer">&nbsp;</li>
     <!-- 
@@ -177,6 +202,6 @@
     </ul> -->
   <ul class="round round-5">
     <!-- call winning team-->
-    <li class="game game-top winner">Lousville <span>85</span></li>
+    <li class="game game-top winner">TEAM1 <span>WINNER</span></li>
   </ul>
 </main>
