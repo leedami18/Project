@@ -36,4 +36,8 @@ export class HomeComponent implements OnInit {
   editSeeds() {
     // edit team names
   }
+
+  winner() {
+    // advance winner
+  }
 }
