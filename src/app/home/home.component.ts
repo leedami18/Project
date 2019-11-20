@@ -12,21 +12,30 @@ export class HomeComponent implements OnInit {
   teamName: Array<Tourney> = [];
   tourneyName = '';
   tourneyTitle = '';
+  disableSubmitButton = false;
+  textDisabled = false;
+  inText: string;
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  navigateTo(path: string) {
-    this.router.navigate([path]);
-  }
+  // navigateTo(path: string) {
+  //   this.router.navigate([path]);
+  // }
 
   tourney() {
     this.tourneyTitle = this.tourneyName;
+    this.disableSubmitButton = true;
+    this.textDisabled = true;
   }
 
   clearAll() {
     this.tourneyTitle = null;
+    this.disableSubmitButton = false;
+    this.textDisabled = false;
+    // this.inText = '';
+    // only clears textbox on the first click
   }
 
   teamNames() {
@@ -35,9 +44,12 @@ export class HomeComponent implements OnInit {
 
   editSeeds() {
     // edit team names
+    this.disableSubmitButton = false;
+    this.textDisabled = false;
   }
 
   winner() {
     // advance winner
   }
+
 }
