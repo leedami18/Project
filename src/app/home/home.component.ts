@@ -42,6 +42,10 @@ export class HomeComponent implements OnInit {
     // this.teamName = this.teamName.split(/[\r\n]+/);
   }
 
+  parseTeamNames() {
+    //
+  }
+
   editSeeds() {
     // edit team names
     this.disableSubmitButton = false;

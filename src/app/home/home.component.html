@@ -8,7 +8,7 @@
     <label for="exampleFormControlTextarea1">Participants / Teams</label>
     <li>Limit 8 participants/teams</li>
     <li>One entry per line.</li>
-    <textarea ngModel (ngModelChange)="teamNames($event)" name="teamName" class="form-control"
+    <textarea [(ngModel)]="teamName" (ngModelChange)="parseTeamName()" name="teamName" class="form-control"
       id="exampleFormControlTextarea1" rows="3" placeholder="Participant Names / Team Names" [disabled]="textDisabled" [value]="inText"></textarea>
   </div>
 </form>
