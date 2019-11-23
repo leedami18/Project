@@ -9,7 +9,9 @@ import { Tourney } from './home.module';
 })
 export class HomeComponent implements OnInit {
 
-  teamName: Array<Tourney> = [];
+  // teams: Array<Tourney> = [];
+  teams = [];
+  value = '';
   tourneyName = '';
   tourneyTitle = '';
   disableSubmitButton = false;
@@ -38,12 +40,13 @@ export class HomeComponent implements OnInit {
     // only clears textbox on the first click
   }
 
-  teamNames() {
-    // this.teamName = this.teamName.split(/[\r\n]+/);
-  }
-
-  parseTeamNames() {
-    //
+  addTeams(newTeam: string) {
+    if (newTeam) {
+      this.teams.push(newTeam);
+      console.log('newTeam... ', this.teams);
+      const teams = newTeam.split(/[\r\n]+/);
+      console.log(teams);
+    }
   }
 
   editSeeds() {

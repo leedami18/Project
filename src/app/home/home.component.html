@@ -1,4 +1,4 @@
-<form>
+
   <div>
     <label for="exampleFormControlInput1">Tournament Name</label>
     <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name" [disabled]="textDisabled" [value]="inText">
@@ -6,19 +6,19 @@
   <div class="form-group">
     <br>
     <label for="exampleFormControlTextarea1">Participants / Teams</label>
-    <li>Limit 8 participants/teams</li>
+    <li>Limit 8 participants/teams.</li>
     <li>One entry per line.</li>
-    <textarea [(ngModel)]="teamName" (ngModelChange)="parseTeamName()" name="teamName" class="form-control"
-      id="exampleFormControlTextarea1" rows="3" placeholder="Participant Names / Team Names" [disabled]="textDisabled" [value]="inText"></textarea>
+    <textarea name="teamName" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Participant Names / Team Names"
+    [disabled]="textDisabled" [(ngModel)]="newTeam"></textarea>
   </div>
-</form>
+
 <div class="form-group form-check">
   <input type="checkbox" class="form-check-input" id="randomCheck">
   <label class="form-check-label" for="randomCheck">Randomize</label>
 </div>
 <!-- ?? SUBMIT navigateTo('courses'); ??-->
 <!-- DISABLE SUBMIT after click until EDIT or CLEAR is clicked -->
-<button [disabled]="disableSubmitButton" (click)="tourney()" class="btn btn-success" type="button" mat-raised-button>
+<button [disabled]="disableSubmitButton" (click)="tourney(); addTeams(newTeam)" class="btn btn-success" type="button" mat-raised-button>
   Submit
 </button>
 <button (click)="editSeeds()" class="btn btn-warning" type="button" mat-raised-button>
