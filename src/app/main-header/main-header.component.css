@@ -1,0 +1,11 @@
+.row-one {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-buttons {
+    margin-right: 10px;
+    
+}

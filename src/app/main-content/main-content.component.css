@@ -1,0 +1,10 @@
+.row-two {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    height: 100%;
+    background-color: #9838f1;
+}
+
+.main-outlet {
+    display: none;
+}
