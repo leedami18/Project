@@ -1,7 +1,7 @@
 
   <div>
     <label for="exampleFormControlInput1">Tournament Name</label>
-    <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name" [disabled]="textDisabled" [value]="inText">
+    <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name" [disabled]="textDisabled">
   </div>
   <div class="form-group">
     <br>
@@ -18,7 +18,7 @@
 </div>
 <!-- ?? SUBMIT navigateTo('courses'); ??-->
 <!-- DISABLE SUBMIT after click until EDIT or CLEAR is clicked -->
-<button [disabled]="disableSubmitButton" (click)="tourney(); addTeams(newTeam)" class="btn btn-success" type="button" mat-raised-button>
+<button [disabled]="disableSubmitButton" (click)="tourney(newTeam)" class="btn btn-success" type="button" mat-raised-button>
   Submit
 </button>
 <button (click)="editSeeds()" class="btn btn-warning" type="button" mat-raised-button>
@@ -42,7 +42,9 @@
 
     <li class="game game-top winner">TEAM1<span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-secondary" (click)="winner()">Winner</button>
+          <button type="button" class="btn btn-secondary" (click)="winner()">Loser</button>
+
         </div>
       </span></li>
 
