@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
   // teams: Array<Tourney> = [];
   teams = [];
+  winners: string[] = [];
   value = '';
   tourneyName = '';
   tourneyTitle = '';
@@ -65,8 +66,16 @@ export class HomeComponent implements OnInit {
     this.teams.sort((a, b) => 0.5 - Math.random());
   }
 
+  winner(round: number, game: number, winner: string) {
+    this.winners['round' + round + '-' + game] = winner;
+  }
 
+  getWinnerName(round: number, game: number) {
+    let name = this.winners['round' + round + '-' + game];
+    return (name !== undefined) ? name : '';
+  }
 
-  winner() {
+  getTeamName(index: number) {
+    return (this.teams.length >= index) ? this.teams[index] : '';
   }
 }
