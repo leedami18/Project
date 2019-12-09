@@ -15,8 +15,9 @@ export class HomeComponent implements OnInit {
   // teams: Array<Tourney> = [];
   teams = [];
   value = '';
-  tourneyName = '';
-  tourneyTitle = '';
+  tourneyName: string;
+  tourneyTitle: string;
+  newTeam: string;
   disableSubmitButton = false;
   textDisabled = false;
   inText: string;
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
   // navigateTo(path: string) {
   //   this.router.navigate([path]);
   // }
+
 
   tourney(newTeam = '') {
     if (this.tourneyName === '' && newTeam === '') {
@@ -44,9 +46,9 @@ export class HomeComponent implements OnInit {
       this.tourneyTitle = this.tourneyName;
       this.disableSubmitButton = true;
       this.textDisabled = true;
-      this.teams.push(newTeam);
-      console.log('newTeam... ', newTeam);
-      const teams = newTeam.split(/[\r\n]+/);
+      this.teams.push(this.newTeam);
+      console.log('newTeam... ', this.newTeam);
+      const teams = this.newTeam.split(/[\r\n]+/);
       console.log(teams);
     }
   }
@@ -57,6 +59,7 @@ export class HomeComponent implements OnInit {
     this.textDisabled = false;
     this.teams = [];
     // this.inText = '';
+    console.log('Clear all array', this.teams);
     // only clears textbox on the first click
   }
 
@@ -67,7 +70,8 @@ export class HomeComponent implements OnInit {
   }
 
   winner() {
-    // advance winner
+
+
   }
 
 

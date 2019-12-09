@@ -3,7 +3,7 @@
 }
 
 .small-box {
-  width: 50%;
+  width: 40%;
 }
 
 .main-container-grid {
@@ -67,21 +67,23 @@ main{
     padding-left:20px;
   }
   
-    li.game.winner{
+    /* li.game.winner{
       font-weight:bold;
-    }
+    } */
     li.game span{
       float:right;
       margin-right:5px;
     }
   
-    li.game-top{ border-bottom:1px solid #aaa; }
+    li.game-top{ border-bottom:1px solid rgb(3, 127, 177); }
   
     li.game-spacer{ 
-      border-right:1px solid #aaa;
+      border-right:1px solid rgb(3, 127, 177);
       min-height:40px;
     }
   
     li.game-bottom{ 
-      border-top:1px solid #aaa;
+      border-top:1px solid rgb(3, 127, 177);
     }
+
+    
