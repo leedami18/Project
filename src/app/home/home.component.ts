@@ -15,9 +15,8 @@ export class HomeComponent implements OnInit {
   // teams: Array<Tourney> = [];
   teams = [];
   value = '';
-  tourneyName: string;
+  tourneyName = '';
   tourneyTitle: string;
-  newTeam: string;
   disableSubmitButton = false;
   textDisabled = false;
   inText: string;
@@ -31,7 +30,7 @@ export class HomeComponent implements OnInit {
   // }
 
 
-  tourney(newTeam = '') {
+  tourney(newTeam= '') {
     if (this.tourneyName === '' && newTeam === '') {
       this.toastService.showToast('danger', 'Please enter name of tournament and participants.', 3000);
       console.log('from if...tourneyName...', this.tourneyName);
@@ -40,16 +39,19 @@ export class HomeComponent implements OnInit {
       this.toastService.showToast('danger', 'Please enter name of tournament', 3000);
       console.log('from else if1...tourneyName...', this.tourneyName);
       console.log('from else if1...newTeam', newTeam);
-    } else if (newTeam === '' || newTeam === undefined) {
+    } else if (newTeam === '') {
       this.toastService.showToast('danger', 'Please enter participants', 3000);
+      console.log('from else if1...tourneyName...', this.tourneyName);
+      console.log('from else if1...newTeam', newTeam);
     } else {
       this.tourneyTitle = this.tourneyName;
       this.disableSubmitButton = true;
       this.textDisabled = true;
-      this.teams.push(this.newTeam);
-      console.log('newTeam... ', this.newTeam);
-      const teams = this.newTeam.split(/[\r\n]+/);
+      this.teams.push(newTeam);
+      console.log('newTeam... ', newTeam);
+      const teams = newTeam.split(/[\r\n]+/);
       console.log(teams);
+      console.log('from else...tourneyName...', this.tourneyName);
     }
   }
 
