@@ -2,7 +2,7 @@
   <label for="exampleFormControlInput1">
     <font color="white">Tournament Name</font>
   </label>
-  <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name"
+  <input type="text" class="form-control small-box" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name"
     [disabled]="textDisabled" [value]="inText">
 </div>
 <div class="form-group">
@@ -16,7 +16,7 @@
   <li>
     <font color="white">One entry per line.</font>
   </li>
-  <textarea name="teamName" class="form-control" id="exampleFormControlTextarea1" rows="3"
+  <textarea name="teamName" class="form-control small-box" id="exampleFormControlTextarea1" rows="3"
     placeholder="Participant Names / Team Names" [disabled]="textDisabled" [(ngModel)]="newTeam"></textarea>
 </div>
 
@@ -25,7 +25,7 @@
   <label class="form-check-label" for="randomCheck">Randomize</label>
 </div>
 
-<button [disabled]="disableSubmitButton" (click)="tourney(); addTeams(newTeam)" class="btn btn-success" type="button"
+<button [disabled]="disableSubmitButton" (click)="tourney()" class="btn btn-success" type="button"
   mat-raised-button>
   Submit
 </button>

@@ -5,9 +5,10 @@
 
     background-color: #6b68fa;
     background-image: url(https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2018/08/12005158/maxresdefault.jpg);
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: right 100% top 30%;
+    
     
 }
 

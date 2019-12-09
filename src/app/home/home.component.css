@@ -2,6 +2,11 @@
     float: right;
 }
 
+.small-box {
+  width: 40%;
+
+}
+
 .main-container-grid {
     display: grid;
     background-color: #32b167;
@@ -63,9 +68,9 @@ main{
     padding-left:20px;
   }
   
-    li.game.winner{
+    /* li.game.winner{
       font-weight:bold;
-    }
+    } */
     li.game span{
       float:right;
       margin-right:5px;
@@ -81,3 +86,5 @@ main{
     li.game-bottom{ 
       border-top:1px solid rgb(3, 127, 177);
     }
+
+    

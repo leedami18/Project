@@ -15,8 +15,9 @@ export class HomeComponent implements OnInit {
   // teams: Array<Tourney> = [];
   teams = [];
   value = '';
-  tourneyName = '';
-  tourneyTitle = '';
+  tourneyName: string;
+  tourneyTitle: string;
+  newTeam: string;
   disableSubmitButton = false;
   textDisabled = false;
   inText: string;
@@ -29,20 +30,20 @@ export class HomeComponent implements OnInit {
   //   this.router.navigate([path]);
   // }
 
-  tourney(newTeam: string) {
-    if (this.tourneyName === '' && newTeam === undefined) {
+  tourney() {
+    if (this.tourneyName === '' && this.newTeam === '' || this.newTeam === undefined || this.newTeam === null) {
       this.toastService.showToast('danger', 'Please enter name of tournament and participants.', 5000);
     } else if (this.tourneyName === '') {
       this.toastService.showToast('danger', 'Please enter name of tournament', 5000);
-    } else if (newTeam === undefined) {
+    } else if (this.newTeam === '' || this.newTeam === undefined) {
       this.toastService.showToast('danger', 'Please enter names of participants', 5000);
     } else {
       this.tourneyTitle = this.tourneyName;
       this.disableSubmitButton = true;
       this.textDisabled = true;
-      this.teams.push(newTeam);
-      console.log('newTeam... ', newTeam);
-      const teams = newTeam.split(/[\r\n]+/);
+      this.teams.push(this.newTeam);
+      console.log('newTeam... ', this.newTeam);
+      const teams = this.newTeam.split(/[\r\n]+/);
       console.log(teams);
     }
   }
