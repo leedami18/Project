@@ -1,24 +1,32 @@
-
-  <div>
-    <label for="exampleFormControlInput1"><font color="white">Tournament Name</font></label>
-    <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name" [disabled]="textDisabled" [value]="inText">
-  </div>
-  <div class="form-group">
-    <br>
-    <label for="exampleFormControlTextarea1"><font color="white">Participants / Teams</font></label>
-    <li><font color="white">Limit 8 participants/teams.</font></li>
-    <li><font color="white">One entry per line.</font></li>
-    <textarea name="teamName" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Participant Names / Team Names"
-    [disabled]="textDisabled" [(ngModel)]="newTeam"></textarea>
-  </div>
+<div>
+  <label for="exampleFormControlInput1">
+    <font color="white">Tournament Name</font>
+  </label>
+  <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name"
+    [disabled]="textDisabled" [value]="inText">
+</div>
+<div class="form-group">
+  <br>
+  <label for="exampleFormControlTextarea1">
+    <font color="white">Participants / Teams</font>
+  </label>
+  <li>
+    <font color="white">Minimum of 8 participants/teams.</font>
+  </li>
+  <li>
+    <font color="white">One entry per line.</font>
+  </li>
+  <textarea name="teamName" class="form-control" id="exampleFormControlTextarea1" rows="3"
+    placeholder="Participant Names / Team Names" [disabled]="textDisabled" [(ngModel)]="newTeam"></textarea>
+</div>
 
 <div class="form-group form-check">
   <input type="checkbox" class="form-check-input" id="randomCheck">
   <label class="form-check-label" for="randomCheck">Randomize</label>
 </div>
-<!-- ?? SUBMIT navigateTo('courses'); ??-->
-<!-- DISABLE SUBMIT after click until EDIT or CLEAR is clicked -->
-<button [disabled]="disableSubmitButton" (click)="tourney(); addTeams(newTeam)" class="btn btn-success" type="button" mat-raised-button>
+
+<button [disabled]="disableSubmitButton" (click)="tourney(); addTeams(newTeam)" class="btn btn-success" type="button"
+  mat-raised-button>
   Submit
 </button>
 <button (click)="editSeeds()" class="btn btn-warning" type="button" mat-raised-button>
@@ -40,168 +48,152 @@
     <!-- loop for how many teams -->
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner"><font color="white">TEAM1</font><span>
+    <li class="game game-top winner">
+      <font color="white">TEAM1</font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
 
     <li class="game game-spacer">&nbsp;</li>
 
-    <li class="game game-bottom "><font color="white">TEAM2</font><span>
+    <li class="game game-bottom ">
+      <font color="white">TEAM2</font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-        <!-- disable advance button after winner moves on or until CLEAR -->
-      </span></li>
+
+      </span>
+    </li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner"><font color="white">TEAM3</font><span>
+    <li class="game game-top winner">
+      <font color="white">TEAM3</font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom "><font color="white">TEAM4</font><span>
+    <li class="game game-bottom ">
+      <font color="white">TEAM4</font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top "><font color="white">TEAM5</font><span>
+    <li class="game game-top ">
+      <font color="white">TEAM5</font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom winner"><font color="white">TEAM6</font><span>
+    <li class="game game-bottom winner">
+      <font color="white">TEAM6</font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner"><font color="white">TEAM7</font><span>
+    <li class="game game-top winner">
+      <font color="white">TEAM7</font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom "><font color="white">TEAM8</font><span>
+    <li class="game game-bottom ">
+      <font color="white">TEAM8</font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
 
     <li class="spacer">&nbsp;</li>
-    <!-- 
-      <li class="game game-top winner">TEAM1 <span>54</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">TEAM1<span>52</span></li>
-  
-      <li class="spacer">&nbsp;</li>
-  
-      <li class="game game-top winner">TEAM1<span>65</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">TEAM1<span>54</span></li>
-  
-      <li class="spacer">&nbsp;</li>
-  
-      <li class="game game-top winner">TEAM1<span>67</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">TEAM1<span>63</span></li>
-  
-      <li class="spacer">&nbsp;</li>
-  
-      <li class="game game-top winner">TEAM1<span>73</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">TEAM1<span>61</span></li>
-  
-      <li class="spacer">&nbsp;</li> -->
+
   </ul>
   <ul class="round round-2">
-    <!-- loop for winning teams-->
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner"><font color="white">TEAM1</font> <span>
+    <li class="game game-top winner">
+      <font color="white">TEAM1</font> <span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom "><font color="white">TEAM3 </font><span>
+    <li class="game game-bottom ">
+      <font color="white">TEAM3 </font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner"><font color="white">TEAM6</font> <span>
+    <li class="game game-top winner">
+      <font color="white">TEAM6</font> <span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom "><font color="white">TEAM7 </font><span>
+    <li class="game game-bottom ">
+      <font color="white">TEAM7 </font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
 
     <li class="spacer">&nbsp;</li>
 
-    <!-- <li class="game game-top ">Memphis <span>48</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom winner">Mich St <span>70</span></li>
-  
-      <li class="spacer">&nbsp;</li>
-  
-      <li class="game game-top ">Creighton <span>50</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom winner">Duke <span>66</span></li>
-  
-      <li class="spacer">&nbsp;</li> -->
   </ul>
   <ul class="round round-3">
-    <!-- loop calling winning teams-->
+
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner"><font color="white">TEAM1 </font><span>
+    <li class="game game-top winner">
+      <font color="white">TEAM1 </font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom "><font color="white">TEAM6 </font><span>
+    <li class="game game-bottom ">
+      <font color="white">TEAM6 </font><span>
         <div class="btn-group-sm">
           <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
-      </span></li>
+      </span>
+    </li>
 
     <li class="spacer">&nbsp;</li>
-    <!-- 
-      <li class="game game-top ">Mich St <span>61</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom winner">Duke <span>71</span></li>
-  
-      <li class="spacer">&nbsp;</li> -->
+
   </ul>
-  <!-- <ul class="round round-4">
-      <li class="spacer">&nbsp;</li>
-  
-      <li class="game game-top winner">Lousville <span>85</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">Duke <span>63</span></li>
-  
-      <li class="spacer">&nbsp;</li>
-    </ul> -->
+
   <ul class="round round-5">
-    <!-- call winning team-->
-    <li class="game game-top winner"><font color="white">TEAM1</font> <span><font color="white">WINNER!</font></span></li>
+
+    <li class="game game-top winner">
+      <font color="white">TEAM1</font> <span>
+        <font color="white">WINNER!</font>
+      </span>
+    </li>
   </ul>
 </main>
