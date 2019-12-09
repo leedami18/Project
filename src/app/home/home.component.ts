@@ -30,13 +30,18 @@ export class HomeComponent implements OnInit {
   //   this.router.navigate([path]);
   // }
 
-  tourney() {
-    if (this.tourneyName === '' && this.newTeam === '' || this.newTeam === undefined || this.newTeam === null) {
-      this.toastService.showToast('danger', 'Please enter name of tournament and participants.', 5000);
+
+  tourney(newTeam = '') {
+    if (this.tourneyName === '' && newTeam === '') {
+      this.toastService.showToast('danger', 'Please enter name of tournament and participants.', 3000);
+      console.log('from if...tourneyName...', this.tourneyName);
+      console.log('from if...newTeam', newTeam);
     } else if (this.tourneyName === '') {
-      this.toastService.showToast('danger', 'Please enter name of tournament', 5000);
-    } else if (this.newTeam === '' || this.newTeam === undefined) {
-      this.toastService.showToast('danger', 'Please enter names of participants', 5000);
+      this.toastService.showToast('danger', 'Please enter name of tournament', 3000);
+      console.log('from else if1...tourneyName...', this.tourneyName);
+      console.log('from else if1...newTeam', newTeam);
+    } else if (newTeam === '' || newTeam === undefined) {
+      this.toastService.showToast('danger', 'Please enter participants', 3000);
     } else {
       this.tourneyTitle = this.tourneyName;
       this.disableSubmitButton = true;
