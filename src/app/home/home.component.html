@@ -1,14 +1,14 @@
 
   <div>
     <label for="exampleFormControlInput1">Tournament Name</label>
-    <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name" [disabled]="textDisabled">
+    <input type="text" class="form-control small-box" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name" [disabled]="textDisabled">
   </div>
   <div class="form-group">
     <br>
     <label for="exampleFormControlTextarea1">Participants / Teams</label>
     <li>Limit 8 participants/teams.</li>
     <li>One entry per line.</li>
-    <textarea name="teamName" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Participant Names / Team Names"
+    <textarea name="teamName" class="form-control small-box" id="exampleFormControlTextarea1" rows="3" placeholder="Participant Names / Team Names"
     [disabled]="textDisabled" [(ngModel)]="newTeam"></textarea>
   </div>
 

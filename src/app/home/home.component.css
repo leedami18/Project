@@ -2,6 +2,10 @@
     float: right;
 }
 
+.small-box {
+  width: 50%;
+}
+
 .main-container-grid {
     display: grid;
     background-color: #32b167;
