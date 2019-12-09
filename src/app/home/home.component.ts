@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
     this.disableSubmitButton = false;
     this.textDisabled = false;
     // this.inText = '';
+    console.log('Clear all array', this.teams);
     // only clears textbox on the first click
   }
 
@@ -56,7 +57,8 @@ export class HomeComponent implements OnInit {
   }
 
   winner() {
-    // advance winner
+
+
   }
 
 }
