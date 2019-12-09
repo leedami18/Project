@@ -1,13 +1,15 @@
 
   <div>
-    <label for="exampleFormControlInput1">Tournament Name</label>
-    <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name" [disabled]="textDisabled">
+
+    <label for="exampleFormControlInput1"><font color="white">Tournament Name</font></label>
+    <input type="text" class="form-control" name="tourneyName" [(ngModel)]="tourneyName" placeholder="Name" [disabled]="textDisabled" [value]="inText">
+
   </div>
   <div class="form-group">
     <br>
-    <label for="exampleFormControlTextarea1">Participants / Teams</label>
-    <li>Limit 8 participants/teams.</li>
-    <li>One entry per line.</li>
+    <label for="exampleFormControlTextarea1"><font color="white">Participants / Teams</font></label>
+    <li><font color="white">Limit 8 participants/teams.</font></li>
+    <li><font color="white">One entry per line.</font></li>
     <textarea name="teamName" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Participant Names / Team Names"
     [disabled]="textDisabled" [(ngModel)]="newTeam"></textarea>
   </div>
@@ -40,62 +42,62 @@
     <!-- loop for how many teams -->
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM1<span>
+    <li class="game game-top winner"><font color="white">TEAM1</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Winner</button>
-          <button type="button" class="btn btn-secondary" (click)="winner()">Loser</button>
+
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
 
         </div>
       </span></li>
 
     <li class="game game-spacer">&nbsp;</li>
 
-    <li class="game game-bottom ">TEAM2<span>
+    <li class="game game-bottom "><font color="white">TEAM2</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
         <!-- disable advance button after winner moves on or until CLEAR -->
       </span></li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM3<span>
+    <li class="game game-top winner"><font color="white">TEAM3</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">TEAM4<span>
+    <li class="game game-bottom "><font color="white">TEAM4</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top ">TEAM5<span>
+    <li class="game game-top "><font color="white">TEAM5</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom winner">TEAM6<span>
+    <li class="game game-bottom winner"><font color="white">TEAM6</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM7<span>
+    <li class="game game-top winner"><font color="white">TEAM7</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">TEAM8<span>
+    <li class="game game-bottom "><font color="white">TEAM8</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
 
@@ -129,29 +131,29 @@
     <!-- loop for winning teams-->
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM1 <span>
+    <li class="game game-top winner"><font color="white">TEAM1</font> <span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">TEAM3 <span>
+    <li class="game game-bottom "><font color="white">TEAM3 </font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
 
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM6 <span>
+    <li class="game game-top winner"><font color="white">TEAM6</font> <span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">TEAM7 <span>
+    <li class="game game-bottom "><font color="white">TEAM7 </font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
 
@@ -173,15 +175,15 @@
     <!-- loop calling winning teams-->
     <li class="spacer">&nbsp;</li>
 
-    <li class="game game-top winner">TEAM1 <span>
+    <li class="game game-top winner"><font color="white">TEAM1 </font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
     <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">TEAM6 <span>
+    <li class="game game-bottom "><font color="white">TEAM6 </font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner()">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
         </div>
       </span></li>
 
@@ -204,6 +206,6 @@
     </ul> -->
   <ul class="round round-5">
     <!-- call winning team-->
-    <li class="game game-top winner">TEAM1 <span>WINNER</span></li>
+    <li class="game game-top winner"><font color="white">TEAM1</font> <span><font color="white">WINNER!</font></span></li>
   </ul>
 </main>
