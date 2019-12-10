@@ -38,24 +38,24 @@
 </h1>
 <main id="tournament">
     <ul class="round round-1">
-      <!-- <tr *ngFor="let Teams of team; let i = index"> -->
-      <li class="spacer">&nbsp;</li>
-  
-      <li class="game game-top ">{{getTeamName(0)}}<span>
-          <div class="btn-group-sm">
-            <button type="button" class="btn btn-success" (click)="winner(1, 1, getTeamName(0))">Advance</button>
-            <button class="btn btn-danger pull-right" (click)="removeTeams(0)">X</button>
-          </div>
-        </span></li>
-  
-      <li class="game game-spacer">&nbsp;</li>
-  
-      <li class="game game-bottom ">{{getTeamName(1)}}<span>
+        <tr *ngFor="let Team of teamNames; let i = index">
+            <li class="spacer">&nbsp;</li>
+      
+            <li class="game game-top winner">
+              <font color="white">{{Team}}</font> <span>
+              </span>
+            </li>
+            <div class="btn-group-sm">
+              <button type="button" class="btn btn-success" (click)="winner(1, i, getTeamName(i))">Advance</button>
+              <button class="btn btn-danger pull-right" (click)="removeTeams(i)">X</button>
+            </div>
+            <li class="game game-spacer">&nbsp;</li>
+          </tr>
+      <!-- <li class="game game-bottom ">{{getTeamName(1)}}<span>
           <div class="btn-group-sm">
             <button type="button" class="btn btn-success" (click)="winner(1, 1, getTeamName(1))">Advance</button>
             <button class="btn btn-danger pull-right" (click)="removeTeams(1)">X</button>
           </div>
-          <!-- disable advance button after winner moves on or until CLEAR -->
         </span></li>
   
       <li class="spacer">&nbsp;</li>
@@ -104,7 +104,7 @@
             <button type="button" class="btn btn-success" (click)="winner(1, 4, getTeamName(7))">Advance</button>
             <button class="btn btn-danger pull-right" (click)="removeTeams(7)">X</button>
           </div>
-        </span></li>
+        </span></li> -->
   
       <li class="spacer">&nbsp;</li>
   </ul>
