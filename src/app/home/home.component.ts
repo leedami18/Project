@@ -28,11 +28,11 @@ export class HomeComponent implements OnInit {
 
   tourney(newTeam= '') {
     if (this.tourneyName === '' && newTeam === '') {
-      this.toastService.showToast('danger', 'Please enter name of tournament and participants.', 10000);
+      this.toastService.showToast('danger', 'Please enter name of tournament and participants.', 3000);
     } else if (this.tourneyName === '') {
-      this.toastService.showToast('danger', 'Please enter name of tournament', 10000);
+      this.toastService.showToast('danger', 'Please enter name of tournament', 3000);
     } else if (newTeam === '') {
-      this.toastService.showToast('danger', 'Please enter participants', 10000);
+      this.toastService.showToast('danger', 'Please enter participants', 3000);
     } else {
       this.tourneyTitle = this.tourneyName;
       this.disableSubmitButton = true;
