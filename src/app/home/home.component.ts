@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   disableSubmitButton = false;
   textDisabled = false;
   inText: string;
+  teamNames: string[] = [];
+  winners: string[] = [];
 
   constructor(private router: Router, private toastService: ToastService) { }
 
@@ -54,9 +56,26 @@ export class HomeComponent implements OnInit {
     this.textDisabled = false;
   }
 
-  winner() {
+  getTeamName(index: number) {
+    return (this.teamNames.length >= index) ? this.teamNames[index] : '';
+  }
 
+winner(round: number, game: number, winner: string) {
+    this.winners['round' + round + '-' + game] = winner;
+  }
 
+  getWinnerName(round: number, game: number) {
+    const name = this.winners['round' + round + '-' + game];
+    return (name !== undefined) ? name : '';
+  }
+
+random() {
+    this.teamNames.sort((a, b) => 0.5 - Math.random());
+  }
+
+  removeTeams(index: number) {
+    this.teamNames.splice(index, 1);
+    console.log('team is', this.teamNames);
   }
 
 
