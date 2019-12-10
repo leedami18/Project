@@ -11,18 +11,13 @@ export class HomeComponent implements OnInit {
 
   // teams: Array<Tourney> = [];
   teams = [];
+  winners: string[] = [];
   value = '';
   tourneyName = '';
-  teamTitle = '';
   tourneyTitle = '';
-  teamN = '';
   disableSubmitButton = false;
   textDisabled = false;
   inText: string;
-  teamName: string;
-  teamNames: string[] = [];
-  winners: string[] = [];
-
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -39,24 +34,27 @@ export class HomeComponent implements OnInit {
   }
 
   clearAll() {
-    this.teamNames = [];
-    this.winners = [];
-    this.teams = [];
     this.tourneyTitle = null;
     this.disableSubmitButton = false;
     this.textDisabled = false;
-    
+    this.teams = [];
+    this.winners = [];
     // this.inText = '';
     // only clears textbox on the first click
   }
 
   addTeams(newTeam: string) {
     if (newTeam) {
-      this.teams.push(newTeam);
-      console.log('newTeam... ', this.teams);
-      const teams = newTeam.split(/[\r\n]+/);
-      console.log(teams);
+      this.teams.push([newTeam]);
+      console.log("newTeam is", this.teams);
+      this.teams = newTeam.split(/[\r\n]+/, 8);
+      console.log("team is ", this.teams);
     }
+  }
+
+  removeTeams(index: number) {
+    this.teams.splice(index, 1);
+    console.log("team is", this.teams);
   }
 
   editSeeds() {
@@ -65,13 +63,8 @@ export class HomeComponent implements OnInit {
     this.textDisabled = false;
   }
 
-  onTeamNamesChanged() {
-    this.teamNames = this.teamName.split(',');
-    this.teamTitle = this.teamN;
-  }
-
-  getTeamName(index: number) {
-    return (this.teamNames.length >= index) ? this.teamNames[index] : '';
+  random() {
+    this.teams.sort((a, b) => 0.5 - Math.random());
   }
 
   winner(round: number, game: number, winner: string) {
@@ -79,17 +72,11 @@ export class HomeComponent implements OnInit {
   }
 
   getWinnerName(round: number, game: number) {
-    const name = this.winners['round' + round + '-' + game];
+    let name = this.winners['round' + round + '-' + game];
     return (name !== undefined) ? name : '';
   }
 
-  random() {
-    this.teamNames.sort((a, b) => 0.5 - Math.random());
+  getTeamName(index: number) {
+    return (this.teams.length >= index) ? this.teams[index] : '';
   }
-
-  removeTeams(index: number) {
-    this.teamNames.splice(index, 1);
-    console.log("team is", this.teamNames);
-  }
-
 }
