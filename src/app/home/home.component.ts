@@ -9,15 +9,17 @@ import { Tourney } from './home.module';
 })
 export class HomeComponent implements OnInit {
 
-  // teams: Array<Tourney> = [];
-  teams = [];
+  teamName: string;
+  teamNames: string[] = [];
   winners: string[] = [];
-  value = '';
   tourneyName = '';
   tourneyTitle = '';
+  teamTitle = '';
+  teamN = '';
   disableSubmitButton = false;
   textDisabled = false;
   inText: string;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -37,23 +39,17 @@ export class HomeComponent implements OnInit {
     this.tourneyTitle = null;
     this.disableSubmitButton = false;
     this.textDisabled = false;
-    this.teams = [];
     // this.inText = '';
     // only clears textbox on the first click
   }
 
-  addTeams(newTeam: string) {
-    if (newTeam) {
-      this.teams.push([newTeam]);
-      console.log("newTeam is", this.teams);
-      this.teams = newTeam.split(/[\r\n]+/, 8);
-      console.log("team is ", this.teams);
-    }
+  onTeamNamesChanged() {
+    this.teamNames = this.teamName.split(',');
+    this.teamTitle = this.teamN;
   }
 
-  removeTeams(index: number) {
-    this.teams.splice(index, 1);
-    console.log("team is", this.teams);
+  getTeamName(index: number) {
+    return (this.teamNames.length >= index) ? this.teamNames[index] : '';
   }
 
   editSeeds() {
@@ -62,20 +58,21 @@ export class HomeComponent implements OnInit {
     this.textDisabled = false;
   }
 
-  random() {
-    this.teams.sort((a, b) => 0.5 - Math.random());
-  }
-
   winner(round: number, game: number, winner: string) {
     this.winners['round' + round + '-' + game] = winner;
   }
 
   getWinnerName(round: number, game: number) {
-    let name = this.winners['round' + round + '-' + game];
+    const name = this.winners['round' + round + '-' + game];
     return (name !== undefined) ? name : '';
   }
 
-  getTeamName(index: number) {
-    return (this.teams.length >= index) ? this.teams[index] : '';
+  random() {
+    this.teamNames.sort((a, b) => 0.5 - Math.random());
+  }
+
+  removeTeams(index: number) {
+    this.teamNames.splice(index, 1);
+    console.log("team is", this.teamNames);
   }
 }
