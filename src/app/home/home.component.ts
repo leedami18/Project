@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
   inText: string;
   teamNames: string[] = [];
   winners: string[] = [];
+  teamName: string;
+  teamN = '';
+  teamTitle = '';
 
   constructor(private router: Router, private toastService: ToastService) { }
 
@@ -28,20 +31,34 @@ export class HomeComponent implements OnInit {
 
   }
 
-  tourney(newTeam= '') {
-    if (this.tourneyName === '' && newTeam === '') {
+  tourney(teamName= '') {
+    if (this.tourneyName === '' && teamName === '') {
       this.toastService.showToast('danger', 'Please enter name of tournament and participants.', 3000);
+      console.log('tourneyName...', this.tourneyName);
+      console.log('teamName...', teamName);
     } else if (this.tourneyName === '') {
       this.toastService.showToast('danger', 'Please enter name of tournament', 3000);
-    } else if (newTeam === '') {
+      console.log('tourneyName...', this.tourneyName);
+      console.log('teamName...', teamName);
+    } else if (teamName === '') {
       this.toastService.showToast('danger', 'Please enter participants', 3000);
+      console.log('tourneyName...', this.tourneyName);
+      console.log('teamName...', teamName);
     } else {
       this.tourneyTitle = this.tourneyName;
       this.disableSubmitButton = true;
       this.textDisabled = true;
-      this.teams.push(newTeam);
-      const teams = newTeam.split(/[\r\n]+/);
+      this.onTeamNamesChanged();
+      // this.teams.push(newTeam);
+      // this.teamNames = newTeam.split(/[\r\n]+/);
+      console.log('tourneyName...', this.tourneyName);
+      console.log('newTeam...', teamName);
     }
+  }
+
+  onTeamNamesChanged() {
+    this.teamNames = this.teamName.split(',');
+    this.teamTitle = this.teamN;
   }
 
   clearAll() {
@@ -60,7 +77,7 @@ export class HomeComponent implements OnInit {
     return (this.teamNames.length >= index) ? this.teamNames[index] : '';
   }
 
-winner(round: number, game: number, winner: string) {
+  winner(round: number, game: number, winner: string) {
     this.winners['round' + round + '-' + game] = winner;
   }
 
@@ -69,7 +86,7 @@ winner(round: number, game: number, winner: string) {
     return (name !== undefined) ? name : '';
   }
 
-random() {
+  random() {
     this.teamNames.sort((a, b) => 0.5 - Math.random());
   }
 

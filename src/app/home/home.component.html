@@ -14,13 +14,13 @@
     <font color="white">Minimum of 8 participants/teams.</font>
   </li>
   <li>
-    <font color="white">One entry per line.</font>
+    <font color="white">Seperate Participants using comma.</font>
   </li>
-  <textarea name="teamName" class="form-control small-box" id="exampleFormControlTextarea1" rows="3"
-    placeholder="Participant Names / Team Names" [disabled]="textDisabled" [(ngModel)]="newTeam"></textarea>
+  <textarea [(ngModel)]="teamName"  name="teamName" class="form-control small-box"
+      id="exampleFormControlTextarea1" rows="3" placeholder="Team 1, Team 2, Team 3, ..." [disabled]="textDisabled" [value]="inText"></textarea>
 </div>
 
-<button style="margin-right: 10px" [disabled]="disableSubmitButton" (click)="tourney(newTeam)" class="btn btn-success" type="button"
+<button style="margin-right: 10px" [disabled]="disableSubmitButton" (click)="tourney(teamName)" class="btn btn-success" type="button"
   mat-raised-button>
   Submit
 </button>
@@ -37,155 +37,133 @@
   <font color="white">{{tourneyTitle}}</font>
 </h1>
 <main id="tournament">
-  <ul class="round round-1">
-    
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">
-      <font color="white">TEAM1</font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-
-    <li class="game game-spacer">&nbsp;</li>
-
-    <li class="game game-bottom ">
-      <font color="white">TEAM2</font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">
-      <font color="white">TEAM3</font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">
-      <font color="white">TEAM4</font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top ">
-      <font color="white">TEAM5</font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom winner">
-      <font color="white">TEAM6</font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">
-      <font color="white">TEAM7</font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">
-      <font color="white">TEAM8</font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-
-    <li class="spacer">&nbsp;</li>
-
+    <ul class="round round-1">
+      <!-- <tr *ngFor="let team of teamArray; let i = index"> -->
+      <li class="spacer">&nbsp;</li>
+  
+      <li class="game game-top winner">{{getTeamName(0)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(1, 1, getTeamName(0))">Advance</button>
+            <button class="btn btn-danger pull-right" (click)="removeTeams(0)">X</button>
+          </div>
+        </span></li>
+  
+      <li class="game game-spacer">&nbsp;</li>
+  
+      <li class="game game-bottom ">{{getTeamName(1)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(1, 1, getTeamName(1))">Advance</button>
+            <button class="btn btn-danger pull-right" (click)="removeTeams(1)">X</button>
+          </div>
+          <!-- disable advance button after winner moves on or until CLEAR -->
+        </span></li>
+  
+      <li class="spacer">&nbsp;</li>
+  
+      <li class="game game-top winner">{{getTeamName(2)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(1, 2, getTeamName(2))">Advance</button>
+            <button class="btn btn-danger pull-right" (click)="removeTeams(2)">X</button>
+          </div>
+        </span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom ">{{getTeamName(3)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(1, 2, getTeamName(3))">Advance</button>
+            <button class="btn btn-danger pull-right" (click)="removeTeams(3)">X</button>
+          </div>
+        </span></li>
+  
+      <li class="spacer">&nbsp;</li>
+  
+      <li class="game game-top ">{{getTeamName(4)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(1, 3, getTeamName(4))">Advance</button>
+            <button class="btn btn-danger pull-right" (click)="removeTeams(4)">X</button>
+          </div>
+        </span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom winner">{{getTeamName(5)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(1, 3, getTeamName(5))">Advance</button>
+            <button class="btn btn-danger pull-right" (click)="removeTeams(5)">X</button>
+          </div>
+        </span></li>
+  
+      <li class="spacer">&nbsp;</li>
+  
+      <li class="game game-top winner">{{getTeamName(6)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(1, 4, getTeamName(6))">Advance</button>
+            <button class="btn btn-danger pull-right" (click)="removeTeams(6)">X</button>
+          </div>
+        </span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom ">{{getTeamName(7)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(1, 4, getTeamName(7))">Advance</button>
+            <button class="btn btn-danger pull-right" (click)="removeTeams(7)">X</button>
+          </div>
+        </span></li>
+  
+      <li class="spacer">&nbsp;</li>
   </ul>
-  <ul class="round round-2">
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">
-      <font color="white">TEAM1</font> <span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">
-      <font color="white">TEAM3 </font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">
-      <font color="white">TEAM6</font> <span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">
-      <font color="white">TEAM7 </font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-
-    <li class="spacer">&nbsp;</li>
-
+  
+    <ul class="round round-2">
+      <!-- loop for winning teams-->
+      <li class="spacer">&nbsp;</li>
+  
+      <li class="game game-top winner">{{getWinnerName(1, 1)}} <span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(2, 1, getWinnerName(1, 1))">Advance</button>
+          </div>
+        </span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom ">{{getWinnerName(1, 2)}} <span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(2, 1, getWinnerName(1, 2))">Advance</button>
+          </div>
+        </span></li>
+  
+      <li class="spacer">&nbsp;</li>
+  
+      <li class="game game-top winner">{{getWinnerName(1, 3)}} <span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(2, 2, getWinnerName(1, 3))">Advance</button>
+          </div>
+        </span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom ">{{getWinnerName(1, 4)}} <span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(2, 2, getWinnerName(1, 4))">Advance</button>
+          </div>
+        </span></li>
+  
+      <li class="spacer">&nbsp;</li>
   </ul>
-  <ul class="round round-3">
-
-    <li class="spacer">&nbsp;</li>
-
-    <li class="game game-top winner">
-      <font color="white">TEAM1 </font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-    <li class="game game-spacer">&nbsp;</li>
-    <li class="game game-bottom ">
-      <font color="white">TEAM6 </font><span>
-        <div class="btn-group-sm">
-          <button type="button" class="btn btn-success" (click)="winner()">Advance</button>
-        </div>
-      </span>
-    </li>
-
-    <li class="spacer">&nbsp;</li>
-
+  
+    <ul class="round round-3">
+      <!-- loop calling winning teams-->
+      <li class="spacer">&nbsp;</li>
+  
+      <li class="game game-top winner">{{getWinnerName(2, 1)}} <span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(3, 1, getWinnerName(2, 1))">Advance</button>
+          </div>
+        </span></li>
+      <li class="game game-spacer">&nbsp;</li>
+      <li class="game game-bottom ">{{getWinnerName(2, 2)}}<span>
+          <div class="btn-group-sm">
+            <button type="button" class="btn btn-success" (click)="winner(3, 1, getWinnerName(2, 2))">Advance</button>
+          </div>
+        </span></li>
+  
+      <li class="spacer">&nbsp;</li>
   </ul>
-
+  
   <ul class="round round-5">
-
-    <li class="game game-top winner">
-      <font color="white">TEAM1</font> <span>
-        <font color="white">WINNER!</font>
-      </span>
-    </li>
-  </ul>
-</main>
+      <!-- call winning team-->
+      <li class="game game-top winner">{{getWinnerName(3, 1)}} <span>WINNER</span></li>
+    </ul>
+  </main>
+  
