@@ -1,0 +1,15 @@
+.row-two {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    height: 100%;
+    background-color: #6b68fa;
+    background-image: url(https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2018/08/12005158/maxresdefault.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+}
+
+.main-outlet {
+    display: none;
+}
+
