@@ -52,7 +52,7 @@
     <li class="game game-top winner">
       <font color="white">{{getTeamName(0)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(1, 1, getTeamName(0))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(1, 1, getTeamName(0))">Advance</button>
           <button class="btn btn-danger pull-right" (click)="removeTeams(0)">X</button>
         </div>
       </span>
@@ -63,7 +63,7 @@
     <li class="game game-bottom ">
       <font color="white">{{getTeamName(1)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(1, 1, getTeamName(1))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(1, 1, getTeamName(1))">Advance</button>
           <button class="btn btn-danger pull-right" (click)="removeTeams(1)">X</button>
         </div>
         <!-- disable advance button after winner moves on or until CLEAR -->
@@ -75,7 +75,7 @@
     <li class="game game-top winner">
       <font color="white">{{getTeamName(2)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(1, 2, getTeamName(2))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(1, 2, getTeamName(2))">Advance</button>
           <button class="btn btn-danger pull-right" (click)="removeTeams(2)">X</button>
         </div>
       </span>
@@ -84,7 +84,7 @@
     <li class="game game-bottom">
       <font color="white">{{getTeamName(3)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(1, 2, getTeamName(3))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(1, 2, getTeamName(3))">Advance</button>
           <button class="btn btn-danger pull-right" (click)="removeTeams(3)">X</button>
         </div>
       </span>
@@ -95,7 +95,7 @@
     <li class="game game-top winner">
       <font color="white">{{getTeamName(4)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(1, 3, getTeamName(4))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(1, 3, getTeamName(4))">Advance</button>
           <button class="btn btn-danger pull-right" (click)="removeTeams(4)">X</button>
         </div>
       </span>
@@ -104,7 +104,7 @@
     <li class="game game-bottom">
       <font color="white">{{getTeamName(5)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(1, 3, getTeamName(5))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(1, 3, getTeamName(5))">Advance</button>
           <button class="btn btn-danger pull-right" (click)="removeTeams(5)">X</button>
         </div>
       </span>
@@ -115,7 +115,7 @@
     <li class="game game-top winner">
       <font color="white">{{getTeamName(6)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(1, 4, getTeamName(6))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(1, 4, getTeamName(6))">Advance</button>
           <button class="btn btn-danger pull-right" (click)="removeTeams(6)">X</button>
         </div>
       </span>
@@ -124,7 +124,7 @@
     <li class="game game-bottom">
       <font color="white">{{getTeamName(7)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(1, 4, getTeamName(7))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(1, 4, getTeamName(7))">Advance</button>
           <button class="btn btn-danger pull-right" (click)="removeTeams(7)">X</button>
         </div>
       </span>
@@ -163,7 +163,7 @@
     <li class="game game-top winner">
       <font color="white">{{getWinnerName(1, 1)}}</font> <span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(2, 1, getWinnerName(1, 1))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(2, 1, getWinnerName(1, 1))">Advance</button>
         </div>
       </span>
     </li>
@@ -171,7 +171,7 @@
     <li class="game game-bottom ">
       <font color="white">{{getWinnerName(1, 2)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(2, 1, getWinnerName(1, 2))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(2, 1, getWinnerName(1, 2))">Advance</button>
         </div>
       </span>
     </li>
@@ -181,7 +181,7 @@
     <li class="game game-top winner">
       <font color="white">{{getWinnerName(1, 3)}}</font> <span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(2, 2, getWinnerName(1, 3))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(2, 2, getWinnerName(1, 3))">Advance</button>
         </div>
       </span>
     </li>
@@ -189,7 +189,7 @@
     <li class="game game-bottom ">
       <font color="white">{{getWinnerName(1, 4)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(2, 2, getWinnerName(1, 4))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(2, 2, getWinnerName(1, 4))">Advance</button>
         </div>
       </span>
     </li>
@@ -215,7 +215,7 @@
     <li class="game game-top winner">
       <font color="white">{{getWinnerName(2, 1)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(3, 1, getWinnerName(2, 1))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(3, 1, getWinnerName(2, 1))">Advance</button>
         </div>
       </span>
     </li>
@@ -223,7 +223,7 @@
     <li class="game game-bottom ">
       <font color="white">{{getWinnerName(2, 2)}}</font><span>
         <div class="btn-group-sm">
-          <button type="button" class="btn btn-secondary" (click)="winner(3, 1, getWinnerName(2, 2))">Advance</button>
+          <button type="button" class="btn btn-success" (click)="winner(3, 1, getWinnerName(2, 2))">Advance</button>
         </div>
       </span>
     </li>
