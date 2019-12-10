@@ -34,38 +34,31 @@ export class HomeComponent implements OnInit {
   tourney(teamName= '') {
     if (this.tourneyName === '' && teamName === '') {
       this.toastService.showToast('danger', 'Please enter name of tournament and participants.', 3000);
-      console.log('tourneyName...', this.tourneyName);
-      console.log('teamName...', teamName);
     } else if (this.tourneyName === '') {
       this.toastService.showToast('danger', 'Please enter name of tournament', 3000);
-      console.log('tourneyName...', this.tourneyName);
-      console.log('teamName...', teamName);
     } else if (teamName === '') {
       this.toastService.showToast('danger', 'Please enter participants', 3000);
-      console.log('tourneyName...', this.tourneyName);
-      console.log('teamName...', teamName);
+    } else if (this.teamName.indexOf(',') === -1) {
+      this.toastService.showToast('danger', 'Seperate pariticpants using a comma', 3000);
     } else {
       this.tourneyTitle = this.tourneyName;
       this.disableSubmitButton = true;
       this.textDisabled = true;
       this.onTeamNamesChanged();
-      // this.teams.push(newTeam);
-      // this.teamNames = newTeam.split(/[\r\n]+/);
-      console.log('tourneyName...', this.tourneyName);
-      console.log('newTeam...', teamName);
     }
-  }
-
-  onTeamNamesChanged() {
-    this.teamNames = this.teamName.split(',');
-    this.teamTitle = this.teamN;
   }
 
   clearAll() {
     this.tourneyTitle = null;
     this.disableSubmitButton = false;
     this.textDisabled = false;
-    this.teams = [];
+    this.teamNames = [];
+    this.winners = [];
+  }
+
+  onTeamNamesChanged() {
+    this.teamNames = this.teamName.split(',');
+    this.teamTitle = this.teamN;
   }
 
   editSeeds() {

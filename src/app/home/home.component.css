@@ -68,9 +68,9 @@ main{
     color: white;
   }
   
-    /* li.game.winner{
-      font-weight:bold;
-    } */
+    li.game.winner{
+
+    }
     li.game span{
       float:right;
       margin-right:5px;
