@@ -11,6 +11,7 @@ import { MaterialDesignModule } from '../material-design/material-design.module'
 import { HomeComponent } from './home/home.component';
 import { AppRoutes } from './app.routes';
 import { CoursesComponent } from './courses/courses.component';
+import { ToastModule } from './toast/toast.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CoursesComponent } from './courses/courses.component';
     FormsModule,
     BrowserAnimationsModule,
     MaterialDesignModule,
-    AppRoutes
+    AppRoutes,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

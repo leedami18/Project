@@ -48,10 +48,7 @@ main{
     .round .game-spacer{
       flex-grow:1;
     }
-  
-  /*
-   *  General Styles
-  */
+
   body{
     font-family:sans-serif;
     font-size:small;
